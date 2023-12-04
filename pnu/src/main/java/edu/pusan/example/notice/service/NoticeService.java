@@ -31,7 +31,7 @@ public class NoticeService {
                                       .build();
             result.add(temp);
         }
-        return null;
+        return result;
     }
 
 }
