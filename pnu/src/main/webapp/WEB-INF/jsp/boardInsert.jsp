@@ -4,7 +4,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>문의 등록</title>
+        <title>상품 등록</title>
     </head>
     <body>
         <header>

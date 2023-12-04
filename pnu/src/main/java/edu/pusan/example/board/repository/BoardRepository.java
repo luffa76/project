@@ -8,4 +8,8 @@ import edu.pusan.example.board.domain.Board;
 
 public interface BoardRepository extends JpaRepository<Board, Integer>{
     List<Board> findAllByUsed(String used);
+    
+    List<Board> findAllByWish(Integer wish);
+
+    List<Board> findAllByBasket(Integer basket);
 }

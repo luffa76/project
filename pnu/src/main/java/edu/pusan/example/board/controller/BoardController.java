@@ -20,10 +20,22 @@ public class BoardController {
   private final BoardService boardService;
 
  @GetMapping("/boardListPage")
-  public String boardListPage(Model model) {
-    model.addAttribute("boardList", boardService.getBoardList());
-    return "boardList";
-  } 
+ public String boardListPage(Model model) {
+   model.addAttribute("boardList", boardService.getBoardList());
+   return "boardList";
+ }
+  
+ @GetMapping("/wishlistPage")
+ public String wishlistPage(Model model) {
+   model.addAttribute("boardList", boardService.getWishlistList());
+   return "wishlist";
+ }
+
+ @GetMapping("/basketPage")
+ public String basketPage(Model model) {
+   model.addAttribute("boardList", boardService.getBasketList());
+   return "basket";
+ }
 
   @GetMapping("/boardInsertPage")
   public String boardInsertPage() {
@@ -58,6 +70,18 @@ public class BoardController {
   public String boardDelete(int boardId) {
     boardService.deleteBoard(boardId);
     return "redirect:/boardListPage";
+  }
+
+  @PostMapping("/setWish")
+  public String setWishlist(int boardId) {
+    boardService.setWish(boardId);
+    return "redirect:/wishlistPage";
+  }
+
+  @PostMapping("/setBasket")
+  public String setBasket(int boardId) {
+    boardService.setBasket(boardId);
+    return "redirect:/basketPage";
   }
 
 }

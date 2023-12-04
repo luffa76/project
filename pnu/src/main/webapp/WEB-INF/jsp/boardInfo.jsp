@@ -5,7 +5,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>고객센터</title>
+        <title>상품 페이지</title>
     </head>
     <body>
         <header>
@@ -17,7 +17,7 @@
             </div>
         </header>
         <section>
-            <h3>문의글 상세</h3>
+            <h3>상품 상세</h3>
             <table style="width: 50%;">
                 <tr>
                     <th>제목</th>

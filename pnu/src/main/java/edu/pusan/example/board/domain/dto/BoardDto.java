@@ -18,6 +18,8 @@ public class BoardDto {
     private String used;
     private String writerId;
     private String writerName;
+    private Integer wish;
+    private Integer basket;
 
     public Board build(){
         Board board = new Board();

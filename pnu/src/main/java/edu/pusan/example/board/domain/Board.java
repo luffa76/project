@@ -31,6 +31,8 @@ public class Board {
 	@Column(name = "update_date")
 	private LocalDateTime updateDate;
     private String used;
+    private int wish;
+    private int basket;
 
     @OneToOne
     @JoinColumn(name = "writer_id")

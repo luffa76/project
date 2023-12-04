@@ -43,7 +43,8 @@
   
     <button type="button" onclick="window.location='logout'">로그아웃</button>
     <button type="button" onclick="window.location='userUpdatePage'">회원정보 수정</button>
-    <button type="button" onclick="window.location='boardListPage'">게시판</button>
+    <button type="button" onclick="window.location='centerListPage'">고객 문의</button>
+    <button type="button" onclick="window.location='boardListPage'">상품 게시판</button>
     <button type="button" onclick="window.location='noticeListPage'">공지사항</button>
   </div>
 </body>

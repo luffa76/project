@@ -4,7 +4,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>문의 수정</title>
+        <title>상품 정보 수정</title>
     </head>
     <body>
         <header>

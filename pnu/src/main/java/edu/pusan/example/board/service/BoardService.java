@@ -20,17 +20,63 @@ public class BoardService {
     public List<BoardDto> getBoardList() {
         List<Board> boardList = boardRepository.findAllByUsed("Y");
         ArrayList<BoardDto> result = new ArrayList<BoardDto>();
-        
+
         for (Board board : boardList) {
             BoardDto temp = BoardDto.builder()
-                                .boardId(board.getBoardId())
-                                .title(board.getTitle())
-                                .contents(board.getContents())
-                                .insertDate(board.getInsertDate())
-                                .used(board.getUsed())
-                                .writerId(board.getWriter().getUserId())
-                                .writerName(board.getWriter().getName())
-                                .build();
+                    .boardId(board.getBoardId())
+                    .title(board.getTitle())
+                    .contents(board.getContents())
+                    .insertDate(board.getInsertDate())
+                    .used(board.getUsed())
+                    .writerId(board.getWriter().getUserId())
+                    .writerName(board.getWriter().getName())
+                    .basket(board.getBasket())
+                    .wish(board.getWish())
+                    .build();
+            result.add(temp);
+        }
+
+        return result;
+    }
+    
+    public List<BoardDto> getWishlistList() {
+        List<Board> boardList = boardRepository.findAllByWish(1);
+        ArrayList<BoardDto> result = new ArrayList<BoardDto>();
+
+        for (Board board : boardList) {
+            BoardDto temp = BoardDto.builder()
+                    .boardId(board.getBoardId())
+                    .title(board.getTitle())
+                    .contents(board.getContents())
+                    .insertDate(board.getInsertDate())
+                    .used(board.getUsed())
+                    .writerId(board.getWriter().getUserId())
+                    .writerName(board.getWriter().getName())
+                    .basket(board.getBasket())
+                    .wish(board.getWish())
+                    .build();
+            result.add(temp);
+        }
+
+        return result;
+    }
+
+    public List<BoardDto> getBasketList() {
+        List<Board> boardList = boardRepository.findAllByBasket(1);
+        ArrayList<BoardDto> result = new ArrayList<BoardDto>();
+
+        for (Board board : boardList) {
+            BoardDto temp = BoardDto.builder()
+                    .boardId(board.getBoardId())
+                    .title(board.getTitle())
+                    .contents(board.getContents())
+                    .insertDate(board.getInsertDate())
+                    .used(board.getUsed())
+                    .writerId(board.getWriter().getUserId())
+                    .writerName(board.getWriter().getName())
+                    .basket(board.getBasket())
+                    .wish(board.getWish())
+                    .build();
             result.add(temp);
         }
 
@@ -72,7 +118,25 @@ public class BoardService {
     public void deleteBoard(int boardId) {
         Board board = boardRepository.findById(boardId).get();
         board.setUsed("N");
-        
+
+        boardRepository.save(board);
+    }
+    
+    public void setWish(int boardId) {
+        Board board = boardRepository.findById(boardId).get();
+        if (board.getWish() == 0) {
+            board.setWish(1);
+        }
+
+        boardRepository.save(board);
+    }
+
+    public void setBasket(int boardId) {
+        Board board = boardRepository.findById(boardId).get();
+        if (board.getBasket() == 0) {
+            board.setBasket(1);
+        }
+
         boardRepository.save(board);
     }
 }

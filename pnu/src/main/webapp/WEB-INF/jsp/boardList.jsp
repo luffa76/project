@@ -5,7 +5,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>고객센터</title>
+        <title>상품 페이지</title>
     </head>
     <body>
         <header>
@@ -17,7 +17,7 @@
             </div>
         </header>
         <section>
-            <h3>고객센터</h3>
+            <h3>상품 페이지</h3>
             <table>
                 <thead>
                     <tr>
@@ -30,7 +30,7 @@
                 <tbody>
                     <c:set var="count" value="1"/>
                     <c:forEach items="${boardList}" var="item">
-                        <tr ondblclick="window.location.href='boardInfoPage/${item.boardId}'">
+                        <tr onclick="window.location.href='boardInfoPage/${item.boardId}'">
                             <td><c:out value="${count}"/></td>
                             <td><c:out value="${item.title}"/></td>
                             <td><c:out value="${item.writerName}"/></td>
