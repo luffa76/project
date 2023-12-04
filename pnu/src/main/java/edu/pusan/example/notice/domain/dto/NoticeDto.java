@@ -10,20 +10,20 @@ import lombok.Getter;
 @Builder
 public class NoticeDto {
     private int noticeId;
-    private String noticetitle;
-    private String noticecontents;
-    private Date noticeinsertDate;
-    private String noticeused;
+    private String noticeTitle;
+    private String noticeContents;
+    private Date noticeInsertDate;
+    private String noticeUsed;
     private String writerId;
     private String writerName;
 
     public Notice build(){
         Notice notice = new Notice();
         notice.setNoticeId(noticeId);
-        notice.setNoticetitle(noticetitle);
-        notice.setNoticecontents(noticecontents);
-        notice.setNoticeinsertDate(noticeinsertDate);
-        notice.setNoticeused(noticeused);
+        notice.setNoticeTitle(noticeTitle);
+        notice.setNoticeContents(noticeContents);
+        notice.setNoticeInsertDate(noticeInsertDate);
+        notice.setNoticeUsed(noticeUsed);
         return notice;
     }
 }

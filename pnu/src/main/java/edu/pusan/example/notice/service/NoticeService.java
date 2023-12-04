@@ -22,10 +22,10 @@ public class NoticeService {
         for (Notice notice : noticeList) {
             NoticeDto temp = NoticeDto.builder()
                                       .noticeId(notice.getNoticeId())
-                                      .noticetitle(notice.getNoticetitle())
-                                      .noticecontents(notice.getNoticecontents())
-                                      .noticeinsertDate(notice.getNoticeinsertDate())
-                                      .noticeused(notice.getNoticeused())
+                                      .noticeTitle(notice.getNoticeTitle())
+                                      .noticeContents(notice.getNoticeContents())
+                                      .noticeInsertDate(notice.getNoticeInsertDate())
+                                      .noticeUsed(notice.getNoticeUsed())
                                       .writerId(notice.getWriter().getUserId())
                                       .writerName(notice.getWriter().getName())
                                       .build();

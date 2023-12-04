@@ -15,10 +15,10 @@ import lombok.Data;
 public class Notice {
     @Id
     private int noticeId;
-    private String noticetitle;
-    private String noticecontents;
-    private Date noticeinsertDate;
-    private String noticeused;
+    private String noticeTitle;
+    private String noticeContents;
+    private Date noticeInsertDate;
+    private String noticeUsed;
 
     @OneToOne
     @JoinColumn(name="writer_id")
